@@ -151,7 +151,7 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
               </button>
             </div>
             {!isCollapsed && (
-              <div className="flex flex-col w-full h-36 md:h-64 lg:h-72 xl:h-1/3 overflow-y-auto bg-white bg-opacity-50 p-3 rounded-md backdrop-blur-md">
+              <div className="flex flex-col w-full h-36 md:h-64 lg:h-72 xl:h-80 overflow-y-auto bg-white bg-opacity-50 p-3 rounded-md backdrop-blur-md">
                 {history.map((msg, index) => (
                   <div key={index} className={`p-2 ${msg.role === 'user' ? 'text-right' : 'text-left'}`}>
                     <p className={`w-full rounded-lg p-2 sm:p-1 md:p-1 text-xs md:text-sm lg:text-md xl:text-lg break-words ${msg.role === 'user' ? 'bg-blue-200' : 'bg-pink-300'}`}>
