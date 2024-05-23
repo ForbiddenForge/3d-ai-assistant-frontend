@@ -151,11 +151,11 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
               </button>
             </div>
             {!isCollapsed && (
-              <div className="flex flex-col w-full h-36 md:h-64 lg:h-72 xl:h-1/3 overflow-y-auto bg-white bg-opacity-50 p-4 rounded-md backdrop-blur-md">
+              <div className="flex flex-col w-full h-36 md:h-64 lg:h-72 xl:h-1/3 overflow-y-auto bg-white bg-opacity-50 p-3 rounded-md backdrop-blur-md">
                 {history.map((msg, index) => (
-                  <div key={index} className={`p-2 break-words ${msg.role === 'user' ? 'text-right' : 'text-left'}`}>
-                    <p className={`rounded-lg p-2 text-xs md:text-sm lg:text-md xl:text-lg break-words ${msg.role === 'user' ? 'bg-blue-200' : 'bg-pink-300'}`}>
-                      <strong>{msg.role === 'assistant' ? 'Copernicus: ' : 'User: '}</strong>{msg.role === 'assistant' ? JSON.parse(msg.content).text : msg.content}
+                  <div key={index} className={`p-2 ${msg.role === 'user' ? 'text-right' : 'text-left'}`}>
+                    <p className={`w-full rounded-lg p-2 sm:p-1 md:p-1 text-xs md:text-sm lg:text-md xl:text-lg break-words ${msg.role === 'user' ? 'bg-blue-200' : 'bg-pink-300'}`}>
+                      <strong>{msg.role === 'assistant' ? 'Sasha(DRGN3D Assistant): ' : 'User: '}</strong>{msg.role === 'assistant' ? JSON.parse(msg.content).text : msg.content}
                     </p>
                   </div>
                 ))}
@@ -183,10 +183,10 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
             />
           </div>
           <div className="flex flex-col items-center justify-end gap-2 pointer-events-auto">
-            <button
+          <button
               disabled={loading || !message || !messagePlaying}
               onClick={handleSkipMessage}
-              className={`bg-pink-500 hover:bg-pink-600 text-white p-4 px-5 font-semibold uppercase rounded-md text-xs ${
+              className={`bg-pink-500 hover:bg-pink-600 text-white sm:p-2 sm:px-3 p-4 px-5 font-semibold uppercase rounded-md text-xs ${
                 loading || !message || !messagePlaying ? "cursor-not-allowed opacity-30" : ""
               }`}
             >
@@ -199,7 +199,7 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
             <button
               disabled={loading || !message || messagePlaying}
               onClick={handlePlayMessage}
-              className={`bg-pink-500 hover:bg-pink-600 text-white p-4 px-5 font-semibold uppercase rounded-md text-xs ${
+              className={`bg-pink-500 hover:bg-pink-600 text-white sm:p-2 sm:px-3 p-4 px-5 font-semibold uppercase rounded-md text-xs ${
                 loading || !message || messagePlaying ? "cursor-not-allowed opacity-30" : "animate-bounce"
               }`}
             >
@@ -212,7 +212,7 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
             <button
               disabled={loading}
               onClick={handleSendMessage}
-              className={`bg-pink-500 hover:bg-pink-600 text-white p-4 px-5 font-semibold uppercase rounded-md ${
+              className={`bg-pink-500 hover:bg-pink-600 text-white sm:p-2 sm:px-3 p-4 px-5 font-semibold uppercase rounded-md ${
                 loading ? "cursor-not-allowed opacity-30" : ""
               }`}
             >
