@@ -124,7 +124,7 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
           </div>
         </div>
 
-        <div className="flex items-end gap-2 pointer-events-auto max-w-screen-md ml-auto">
+        <div className="flex items-end gap-2 pointer-events-auto w-full max-w-screen-md mx-auto">
           <div className="flex flex-col w-full">
             <div className="flex flex-row gap-2 justify-end">
               <button
@@ -153,8 +153,8 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
             {!isCollapsed && (
               <div className="flex flex-col w-full h-36 md:h-64 lg:h-72 xl:h-1/3 overflow-y-auto bg-white bg-opacity-50 p-4 rounded-md backdrop-blur-md">
                 {history.map((msg, index) => (
-                  <div key={index} className={`p-2 ${msg.role === 'user' ? 'text-right' : 'text-left'}`}>
-                    <p className={`rounded-lg p-2 text-xs md:text-sm lg:text-md xl:text-lg ${msg.role === 'user' ? 'bg-blue-200' : 'bg-pink-300'}`}>
+                  <div key={index} className={`p-2 break-words ${msg.role === 'user' ? 'text-right' : 'text-left'}`}>
+                    <p className={`rounded-lg p-2 text-xs md:text-sm lg:text-md xl:text-lg break-words ${msg.role === 'user' ? 'bg-blue-200' : 'bg-pink-300'}`}>
                       <strong>{msg.role === 'assistant' ? 'Copernicus: ' : 'User: '}</strong>{msg.role === 'assistant' ? JSON.parse(msg.content).text : msg.content}
                     </p>
                   </div>
