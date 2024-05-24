@@ -160,7 +160,7 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
                   </div>
                 ))}
                 {loading ? (
-                      <p>
+                      <p className="animate-pulse">
                         <em>
                           {language === 'English' ? 'Copernicus is typing...' : ''}
                           {language === 'Chinese' ? '哥白尼正在打字……' : ''}
