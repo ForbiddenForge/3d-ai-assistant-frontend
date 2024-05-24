@@ -163,7 +163,6 @@ export function Avatar({messagePlaying, setMessagePlaying, audioRef, ...props}) 
 
   const { animations } = useGLTF("/models/animationsMale.glb");
   
-  console.log('animation list:', animations)
   const group = useRef();
   const { actions, mixer } = useAnimations(animations, group);
 

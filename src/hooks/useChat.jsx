@@ -39,8 +39,6 @@ export const ChatProvider = ({ children }) => {
     English: 'forbiddenforge_prompt',
     Chinese: 'forbiddenforge_chinese_prompt',
   };
-  console.log('LANGUAGE',language)
-  console.log(promptLanguage[language]);
 
   const historyRef = useRef(history);
 
@@ -134,7 +132,6 @@ export const ChatProvider = ({ children }) => {
 
     if (response.ok) {
       const { jobId, message } = await response.json();
-      console.log("THIS IS THE JOB ID INSIDE CHAT", jobId);
       sendJobId(jobId);
       setMessages([{ role: 'system', content: message }]); // Initial message setting
     } else {
