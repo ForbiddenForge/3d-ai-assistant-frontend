@@ -100,7 +100,7 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
         <div className="flex flex-row justify-between items-center mt-0">
           <div className="flex flex-col items-center backdrop-blur-md bg-white bg-opacity-50 rounded-lg gap-1 max-w-1/2 pointer-events-auto">
             <a href="https://github.com/ForbiddenForge/" target="_blank" className="pointer-events-auto z-20">
-              <div className="backdrop-blur-md bg-emerald-100 bg-opacity-50 py-1 px-1 rounded-lg flex flex-col justify-center items-center">
+              <div className="backdrop-blur-md bg-indigo-300 bg-opacity-50 py-1 px-1 rounded-lg flex flex-col justify-center items-center">
                 <h2 className="flex flex-row gap-1 text-xs font-extrabold bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.purple.400),theme(colors.purple.100),theme(colors.pink.500),theme(colors.purple.400),theme(colors.pink.300),theme(colors.purple.500),theme(colors.purple.400))] bg-[length:200%_auto] animate-gradient">    
                 <em className="text-black text-xs"> Project by: </em>ForbiddenForge 
                 </h2>
@@ -154,7 +154,7 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
               <div className="flex flex-col w-full h-36 md:h-64 lg:h-72 xl:h-80 overflow-y-auto bg-white bg-opacity-50 p-3 rounded-md backdrop-blur-md">
                 {history.map((msg, index) => (
                   <div key={index} className={`p-2 ${msg.role === 'user' ? 'text-right' : 'text-left'}`}>
-                    <p className={`w-full rounded-lg p-2 sm:p-1 md:p-1 text-xs md:text-sm lg:text-md xl:text-lg break-words ${msg.role === 'user' ? 'bg-blue-200' : 'bg-pink-300'}`}>
+                    <p className={`w-full rounded-lg p-2 sm:p-1 md:p-1 text-xs md:text-sm lg:text-md xl:text-lg break-words ${msg.role === 'user' ? 'bg-emerald-200' : 'bg-indigo-300'}`}>
                       <strong>{msg.role === 'assistant' ? 'Copernicus: ' : 'User: '}</strong>{msg.role === 'assistant' ? JSON.parse(msg.content).text : msg.content}
                     </p>
                   </div>
@@ -186,7 +186,7 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
           <button
               disabled={loading || !message || !messagePlaying}
               onClick={handleSkipMessage}
-              className={`bg-pink-500 hover:bg-pink-600 text-white sm:p-2 sm:px-3 p-4 px-5 font-semibold uppercase rounded-md text-xs ${
+              className={`bg-indigo-600 hover:bg-indigo-700 text-white sm:p-2 sm:px-3 p-4 px-5 font-semibold uppercase rounded-md text-xs ${
                 loading || !message || !messagePlaying ? "cursor-not-allowed opacity-30" : ""
               }`}
             >
@@ -199,7 +199,7 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
             <button
               disabled={loading || !message || messagePlaying}
               onClick={handlePlayMessage}
-              className={`bg-pink-500 hover:bg-pink-600 text-white sm:p-2 sm:px-3 p-4 px-5 font-semibold uppercase rounded-md text-xs ${
+              className={`bg-indigo-600 hover:bg-indigo-700 text-white sm:p-2 sm:px-3 p-4 px-5 font-semibold uppercase rounded-md text-xs ${
                 loading || !message || messagePlaying ? "cursor-not-allowed opacity-30" : "animate-bounce"
               }`}
             >
@@ -212,7 +212,7 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
             <button
               disabled={loading}
               onClick={handleSendMessage}
-              className={`bg-pink-500 hover:bg-pink-600 text-white sm:p-2 sm:px-3 p-4 px-5 font-semibold uppercase rounded-md ${
+              className={`bg-indigo-600 hover:bg-indigo-700 text-white sm:p-2 sm:px-3 p-4 px-5 font-semibold uppercase rounded-md ${
                 loading ? "cursor-not-allowed opacity-30" : ""
               }`}
             >
