@@ -155,7 +155,7 @@ export const UI = ({ hidden, messagePlaying, setMessagePlaying, audioRef, ...pro
                 {history.map((msg, index) => (
                   <div key={index} className={`p-2 ${msg.role === 'user' ? 'text-right' : 'text-left'}`}>
                     <p className={`w-full rounded-lg p-2 sm:p-1 md:p-1 text-xs md:text-sm lg:text-md xl:text-lg break-words ${msg.role === 'user' ? 'bg-blue-200' : 'bg-pink-300'}`}>
-                      <strong>{msg.role === 'assistant' ? 'Sasha(DRGN3D Assistant): ' : 'User: '}</strong>{msg.role === 'assistant' ? JSON.parse(msg.content).text : msg.content}
+                      <strong>{msg.role === 'assistant' ? 'Copernicus: ' : 'User: '}</strong>{msg.role === 'assistant' ? JSON.parse(msg.content).text : msg.content}
                     </p>
                   </div>
                 ))}

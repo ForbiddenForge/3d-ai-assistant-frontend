@@ -33,10 +33,14 @@ export const ChatProvider = ({ children }) => {
 
   const ws = useRef(null);
   const { language } = useLanguage();
+  // NOTE, even though the UI displays the language as ‘中文’ when you go to try to read the language state,
+  // it will output "Chinese". I have no idea why. This is why the object key is Chinese and not 中文
   const promptLanguage = {
     English: 'forbiddenforge_prompt',
     Chinese: 'forbiddenforge_chinese_prompt',
   };
+  console.log('LANGUAGE',language)
+  console.log(promptLanguage[language]);
 
   const historyRef = useRef(history);
 

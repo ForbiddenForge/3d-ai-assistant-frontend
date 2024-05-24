@@ -120,7 +120,7 @@ export function Avatar({messagePlaying, setMessagePlaying, audioRef, ...props}) 
 
   // FEMALE Model
   const { nodes, materials, scene } = useGLTF(
-  "/models/p.glb"
+  "/models/professor.glb"
   );
   const { message, onMessagePlayed, chat } = useChat();
   
@@ -162,14 +162,14 @@ export function Avatar({messagePlaying, setMessagePlaying, audioRef, ...props}) 
   */
 
   const { animations } = useGLTF("/models/animationsMale.glb");
-
+  
+  console.log('animation list:', animations)
   const group = useRef();
   const { actions, mixer } = useAnimations(animations, group);
 
   const [animation, setAnimation] = useState(
     animations.find((a) => a.name === "Idle") ? "Idle" : animations[0].name // Check if Idle animation exists otherwise use first animation
   );
-
 
   useEffect(() => {
     if (!message) {
@@ -425,9 +425,22 @@ export function Avatar({messagePlaying, setMessagePlaying, audioRef, ...props}) 
         morphTargetInfluences={nodes.Wolf3D_Teeth.morphTargetInfluences}
       />
       <skinnedMesh
-        geometry={nodes.Wolf3D_Hair.geometry}
-        material={materials.Wolf3D_Hair}
-        skeleton={nodes.Wolf3D_Hair.skeleton}
+        name="Wolf3D_Beard"
+        geometry={nodes.Wolf3D_Beard.geometry}
+        material={materials.Wolf3D_Beard}
+        skeleton={nodes.Wolf3D_Beard.skeleton}
+        morphTargetDictionary={nodes.Wolf3D_Beard.morphTargetDictionary}
+        morphTargetInfluences={nodes.Wolf3D_Beard.morphTargetInfluences}
+      />
+      <skinnedMesh
+        geometry={nodes.Wolf3D_Glasses.geometry}
+        material={materials.Wolf3D_Glasses}
+        skeleton={nodes.Wolf3D_Glasses.skeleton}
+      />
+      <skinnedMesh
+        geometry={nodes.Wolf3D_Headwear.geometry}
+        material={materials.Wolf3D_Headwear}
+        skeleton={nodes.Wolf3D_Headwear.skeleton}
       />
       <skinnedMesh
         geometry={nodes.Wolf3D_Body.geometry}
@@ -453,6 +466,6 @@ export function Avatar({messagePlaying, setMessagePlaying, audioRef, ...props}) 
   )
 }
 
-useGLTF.preload("/models/p.glb");
+useGLTF.preload("/models/professor.glb");
 useGLTF.preload("/models/animationsMale.glb");
 
